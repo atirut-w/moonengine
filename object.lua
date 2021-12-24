@@ -1,1 +1,1 @@
-return require("moonengine.classic.classic")
+return require("moonengine.3rd.classic.classic")

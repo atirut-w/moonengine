@@ -1,3 +1,6 @@
 [submodule "classic"]
-	path = classic
+	path = 3rd/classic
 	url = https://github.com/rxi/classic
+[submodule "log"]
+	path = 3rd/log
+	url = https://github.com/rxi/log.lua
