@@ -7,7 +7,7 @@ local function process_nodes(node)
     if node.update then
         local success, result = pcall(node.update, node)
         if not success then
-            log.error("Error in node update: " .. result)
+            log.error(("Error while updating node %s: %s"):format(node.name, result or "unknown error"))
         end
     end
 

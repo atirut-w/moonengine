@@ -21,7 +21,7 @@ function node:add_child(child)
     if child.init then
         local success, result = pcall(child.init, child)
         if not success then
-            log.error("Failed to initialize node " .. child.name .. ": " .. result)
+            log.error(("Failed to initialize node %s: %s"):format(child.name, result or "unknown error"))
         end
     end
 
