@@ -18,7 +18,7 @@ end
 function moonengine.update()
     traverse_nodes(rootnode, function(node)
         if node.update then
-            local success, result = pcall(node.update, node)
+            local success, result = pcall(node.update, node, love.timer.getDelta())
             if not success then
                 log.error(result or "unknown error")
             end
