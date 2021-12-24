@@ -20,7 +20,7 @@ function moonengine.update()
         if node.update then
             local success, result = pcall(node.update, node)
             if not success then
-                log.error(("Error while updating node %s: %s"):format(node.name, result or "unknown error"))
+                log.error(result or "unknown error")
             end
         end
     end)
