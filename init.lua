@@ -26,4 +26,15 @@ function moonengine.update()
     end)
 end
 
+function moonengine.draw()
+    traverse_nodes(rootnode, function(node)
+        if node.draw then
+            local success, result = pcall(node.draw, node)
+            if not success then
+                log.error(result or "unknown error")
+            end
+        end
+    end)
+end
+
 return moonengine
