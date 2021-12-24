@@ -22,6 +22,10 @@ function node:add_child(child)
         local success, result = pcall(child.init, child)
         if not success then
             log.error(("Failed to initialize node %s: %s"):format(child.name, result or "unknown error"))
+            log.error("Node will not be added to parent")
+
+            table.remove(self.children, #self.children)
+            return
         end
     end
 
